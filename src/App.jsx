@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<>
+			<h1>CV/Resume Builder</h1>
+			<div className='card'>
+				<p>
+					Fill out the folllowing fields to generate a CV/Resume. What's the
+					difference?
+				</p>
+				<h2>General Information</h2>
+				<div className='card input-flex'>
+					<label htmlFor='firstName'>
+						First Name:
+						<input name='firstName' type='text' />
+					</label>
+					<label htmlFor='lastName'>
+						Last Name:
+						<input name='lastName' type='text' />
+					</label>
+					<label htmlFor='email'>
+						Email:
+						<input type='text' name='email' />
+					</label>
+					<label htmlFor='phone'>
+						Phone:
+						<input type='tel' name='phone' />
+					</label>
+				</div>
+				<h2>Education Info</h2>
+				<div className='card input-flex'>
+					<label htmlFor='school'>
+						School:
+						<input name='school' type='text' />
+					</label>
+					<label htmlFor='degree'>
+						Degree/Title of Study:
+						<input name='degree' type='text' />
+					</label>
+					<label htmlFor='schoolStart'>
+						Start (Month & Year):
+						<input type='text' name='schoolStart' />
+					</label>
+					<label htmlFor='schoolEnd'>
+						End (Month & Year):
+						<input type='text' name='schoolEnd' />
+					</label>
+				</div>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
