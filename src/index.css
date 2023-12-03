@@ -18,6 +18,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+html {
+	padding: 0;
+}
+
 a {
 	font-weight: 500;
 	color: var(--melon);
@@ -25,6 +29,8 @@ a {
 }
 
 body {
+	max-width: 100dvw;
+	padding: 0;
 	margin: 0;
 	display: flex;
 	place-items: center;
@@ -49,7 +55,7 @@ button {
 	transition: border-color 0.25s;
 }
 button:hover {
-	border-color: var(--melon);
+	border-color: var(--tea-green);
 }
 button:focus,
 button:focus-visible {
@@ -65,7 +71,7 @@ button:focus-visible {
 		color: var(--melon);
 	}
 	button {
-		background-color: var(--melon);
+		background-color: var(--tea-green);
 		color: var(--black-olive);
 	}
 }
