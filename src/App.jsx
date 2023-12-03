@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import GeneralInfo from './components/GeneralInfo';
 import Experience from './components/Experience';
 import Education from './components/Education';
 
@@ -24,8 +25,6 @@ function App() {
 	};
 
 	const updateExperienceData = (i) => (e) => {
-		console.log(e);
-		console.log(i);
 		let experience = { ...experienceData[i] };
 		experience[e.target.name] = e.target.value;
 		let replacedExperiences = [...experienceData];
@@ -56,24 +55,7 @@ function App() {
 					difference?
 				</p>
 				<h2>General Information</h2>
-				<div className='card input-flex'>
-					<label htmlFor='firstName'>
-						First Name:
-						<input name='firstName' type='text' onChange={updateGeneralData} />
-					</label>
-					<label htmlFor='lastName'>
-						Last Name:
-						<input name='lastName' type='text' onChange={updateGeneralData} />
-					</label>
-					<label htmlFor='email'>
-						Email:
-						<input type='text' name='email' onChange={updateGeneralData} />
-					</label>
-					<label htmlFor='phone'>
-						Phone:
-						<input type='tel' name='phone' onChange={updateGeneralData} />
-					</label>
-				</div>
+				<GeneralInfo generalData={generalData} onChange={updateGeneralData} />
 				<h2>Education Info</h2>
 				<Education educationData={generalData} onChange={updateGeneralData} />
 				<h2>Experience</h2>
@@ -110,8 +92,9 @@ function App() {
 							<h2>Experience</h2>
 							{experienceData.map((experience, i) => (
 								<div key={i} className='experience-card'>
-									<p className='company'>{experience.company}</p>
-									<p className='position'>{experience.position}</p>
+									<p className='job'>
+										{experience.position + ' - ' + experience.company}
+									</p>
 									<p className='job-description'>{experience.jobDescription}</p>
 									<p className='experience-dates'>
 										{experience.experienceStart} - {experience.experienceEnd}
